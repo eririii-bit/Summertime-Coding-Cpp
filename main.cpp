@@ -8,16 +8,48 @@ using namespace chrono;
 
 void MainMenu();
 
-void displayPlaceholder(int lines = 19) {
-    cout << string(120, '-') << string(lines, '\n')
-         << "This paragraph serves as a temporary placeholder, designed to occupy space until the actual content is ready. It's intended to visually represent where text will eventually reside, allowing for layout and design adjustments in the interim. This filler text ensures that the overall structure and flow of the document or webpage can be assessed without the distraction of irrelevant or incomplete information.";
+void displayPlaceholder() {
+    //cout << string(120, '-') << string(lines, '\n')
+    cout << "\nThis paragraph serves as a temporary placeholder, designed to occupy space until the actual content is ready. It's intended to visually represent where text will eventually reside, allowing for layout and design adjustments in the interim. This filler text ensures that the overall structure and flow of the document or webpage can be assessed without the distraction of irrelevant or incomplete information.\n";
 }
 
-void VarLesson() {
+void ReviewLessons() {
+    cout << string(120, '-') << string(5, '\n') << "Review Lessons? (Y/N)";
+
+
+
+}
+
+void UserInput() {
+    cout << string(120, '-') << string(5, '\n') << "--User Input--\n";
     displayPlaceholder();
+    ReviewLessons();
+
+}
+
+void DataTypes() {
+    cout << string(120, '-') << string(5, '\n') << "--Data Types--\n";
+    displayPlaceholder();
+
+    cout << "\nPress Enter to continue to User Input Lesson\n";
+    cin.ignore();
+    //getchar();
+    UserInput();
+}
+
+void Variables() {
+    cout << string(120, '-') << string(5, '\n') << "--Variables--\n";
+    displayPlaceholder();
+
+    cout << "\nPress Enter to continue to Data Types Lesson\n";
+    cin.ignore();
+    //getchar();
+    DataTypes();
 }
 
 void gameIntro() {
+    cout << string(120, '-') << string(5, '\n');
+    char gameIntroChoice;
     cout << "\n--Introduction:--\n";
     cout << "C++ is a widely-used programming language, especially in game development and creating computer programs.\n";
     cout << "It was developed as an extension of C, sharing similar syntax.\n\n";
@@ -41,17 +73,20 @@ void gameIntro() {
     cout << "\n--Statements:--\n";
     cout << "C++ uses statements to perform actions. These include declaration statements (e.g., int x = 5;),\n";
     cout << "control statements (e.g., if, for, while), and more. Statements are the building blocks of a C++ program.\n\n";
-    system("pause");
 
-    VarLesson();
+    cout << "Press Enter to continue to Variable Lesson\n";
+    cin.ignore();
+    getchar();
+    Variables();
 }
 
 void storyIntro() {
+
     char storyIntroChoice;
-    displayPlaceholder(25);
+    displayPlaceholder();
 
     while (true) {
-        cout << "\n\nProceed to game intro? (Y/N): ";
+        cout << "\nProceed to game intro? (Y/N): ";
         cin >> storyIntroChoice;
         if (storyIntroChoice == 'Y' || storyIntroChoice == 'y') {
             gameIntro();
@@ -70,20 +105,18 @@ void storyIntro() {
 void Credits() {
     cout << "\n\n";
     cout << string(120, '-') << "\n";
-    displayPlaceholder(1);
+    displayPlaceholder();
     this_thread::sleep_for(seconds(1));
     cout << "\n\t\tProject Manager  | Dungo, Mitchelle Kyle L.\n"
          << "\n\t\tBusiness Analyst | Ebuenga, Caryl Yasmin P.\n"
          << "\n\t\tDeveloper        | Fabillar, John Xzibit C.\n"
          << "\n\t\tDeveloper        | Alpas, Lee Endrey A.\n"
-         << "\n\t\tQ.A. Tester     | Malate, Mae Clare S.\n"
-         << "\n\t\tQ.A. Tester     | Castro, John Paolo J.\n"
-         << "\n\t\tQ.A. Tester     | Ubias, Breldan Dave H.\n"
-         << "\n\t\tQ.A. Tester     | Aniceto, Ezekiel Leinard B.\n\n";
+         << "\n\t\tQ.A. Tester      | Malate, Mae Clare S.\n"
+         << "\n\t\tQ.A. Tester      | Castro, John Paolo J.\n"
+         << "\n\t\tQ.A. Tester      | Ubias, Breldan Dave H.\n"
+         << "\n\t\tQ.A. Tester      | Aniceto, Ezekiel Leinard B.\n\n";
     this_thread::sleep_for(seconds(1));
-    displayPlaceholder(1);
-    this_thread::sleep_for(seconds(1));
-    displayPlaceholder(1);
+    displayPlaceholder();
     cout << string(120, '-') << string(15, '\n');
     MainMenu();
 }
@@ -110,14 +143,11 @@ void MainMenu() {
 
     switch (mainMenuChoice) {
         case 1:
-            storyIntro();
-            break;
+            storyIntro(); break;
         case 2:
-            Credits();
-            break;
+            Credits(); break;
         case 3:
-            exitMsg();
-            break;
+            exitMsg(); break;
         default:
             cout << "Please enter among these 3 choices.\n";
             MainMenu();
@@ -128,7 +158,7 @@ void MainMenu() {
 void welcomeMsg() {
     cout << string(120, '-')
          << "\n\t\t\t\t|-\t\t  -Welcome to-      \t\t-|\n"
-         << "\t\t\t\t|-\t  ---------------------Summertime Coding:|\n"
+         << "\t\t\t\t|-\t  ---------------------Summertime::Coding|\n"
          << "\t\t\t\t|A C++ Tutorial Game---------------------  \t-|\n"
          << string(120, '-');
 
