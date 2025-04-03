@@ -7,6 +7,10 @@ using namespace std;
 using namespace chrono;
 
 void MainMenu();
+void Test();
+void Variables();
+void DataTypes();
+void UserInput();
 const string lineBreak = string(120, '-');
 const string blankSpace = string(2, '\n');
 const string titleTabs = string(4, '\t');
@@ -25,10 +29,227 @@ inline void displayPlaceholder() {
     cout << "\nThis paragraph serves as a temporary placeholder, designed to occupy space until the actual content is ready. It's intended to visually represent where text will eventually reside, allowing for layout and design adjustments in the interim. This filler text ensures that the overall structure and flow of the document or webpage can be assessed without the distraction of irrelevant or incomplete information.\n";
 }
 
-void ReviewLessons() {
-    cout << lineBreak << blankSpace << "!! Warning, A test is coming !!";
-    cout << blankSpace << "(Y)Review Lessons? (N)Play Games all night.";
+void endingMessage() {
+    displayPlaceholder(); // goodbye message.
+    cout << blankSpace << "Thank you for playing this game.";
+}
 
+void retake() {
+    char retakeChoice;
+        while (true) {
+        cout << lineBreak << blankSpace << "Retake Quiz? (Y/N): ";
+        cin >> retakeChoice;
+        if (retakeChoice == 'Y' || retakeChoice == 'y') {
+            Test();
+            break;
+        } else if (retakeChoice == 'N' || retakeChoice == 'n') {
+            endingMessage();
+            break;
+        } else {
+            cout << "Please input Y or N only.\n";
+        }
+    }
+}
+
+void Test() {
+    cout << lineBreak << blankSpace << titleTabs << "--Test--" << blankSpace;
+    char MChoices1, MChoices2, MChoices3, MChoices4, MChoices5, TF1, TF2, TF3, TF4, TF5;
+    int score = 0;
+
+    while(true) {
+        cout << lineBreak << "\nA. A fixed value in a program\nB. A container for storing data values\nC. A function that performs calculations"
+             << blankSpace << "1. What is a variable in C++? ";
+        cin >> MChoices1;
+        if (MChoices1 == 'A' || MChoices1 == 'a' || MChoices1 == 'B' || MChoices1 == 'b' || MChoices1 == 'C' || MChoices1 == 'c') {
+            if (MChoices1 == 'B' ||MChoices1 == 'b') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n ";
+            }
+        }
+
+    while(true) {
+        cout << lineBreak << "\nA. string\nB. cout\nC. int"
+             << blankSpace << "2. Which keyword is used to declare variables in C++? ";
+        cin >> MChoices2;
+        if (MChoices2 == 'A' || MChoices2 == 'a' || MChoices2 == 'B' || MChoices2 == 'b' || MChoices2 == 'C' || MChoices2 == 'c') {
+            if (MChoices2 == 'C' ||MChoices2 == 'c') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+    while(true) {
+        cout << lineBreak << "\nA. Using cin\nB. Using printf\nC. Using cout"
+             << blankSpace << "3. How do you take user input in C++? ";
+        cin >> MChoices3;
+        if (MChoices3 == 'A' || MChoices3 == 'a' || MChoices3 == 'B' || MChoices3 == 'b' || MChoices3 == 'C' || MChoices3 == 'c') {
+            if (MChoices3 == 'A' || MChoices3 == 'a') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+    while(true) {
+        cout << lineBreak << "\nA. integer\nB. char\nC. stringify"
+             << blankSpace << "4. Which of the following is a correct data type in C++? ";
+        cin >> MChoices4;
+        if (MChoices4 == 'A' || MChoices4 == 'a' || MChoices4 == 'B' || MChoices4 == 'b' || MChoices4 == 'C' || MChoices4 == 'c') {
+            if (MChoices4 == 'b' || MChoices4 == 'B') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+     while(true) {
+        cout << lineBreak << "\nA. >>\nB. <<\nC. ::"
+             << blankSpace << "5. What symbol is used to insert data into cin for user input? ";
+        cin >> MChoices5;
+        if (MChoices5 == 'A' || MChoices5 == 'a' || MChoices5 == 'B' || MChoices5 == 'b' || MChoices5 == 'C' || MChoices5 == 'c') {
+            if (MChoices5 == 'A' || MChoices5 == 'a') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+    while(true) {
+        cout << lineBreak << "True (T) False (F)"
+             << blankSpace << "In C++, the int keyword is used to declare integer variables. ";
+        cin >> TF1;
+        if (TF1 == 'T' || TF1 == 't' || TF1 == 'F' || TF1 == 'f') {
+            if (TF1 == 'T' || TF1 == 't') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+    while(true) {
+        cout << lineBreak << "True (T) False (F)"
+             << blankSpace << "The symbol '<<' is used to get user input with cin. ";
+        cin >> TF2;
+        if (TF2 == 'T' || TF2 == 't' || TF2 == 'F' || TF2 == 'f') {
+            if (TF2 == 'F' ||TF2 == 'f') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+    while(true) {
+        cout << lineBreak << "True (T) False (F)"
+             << blankSpace << "In C++, string is a valid data type for declaring a variable. ";
+        cin >> TF3;
+        if (TF3 == 'T' || TF3 == 't' || TF3 == 'F' || TF3 == 'f') {
+            if (TF3 == 'T' ||TF3 == 't') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+        while(true) {
+        cout << lineBreak << "True (T) False (F)"
+             << blankSpace << "The main function is mandatory in all C++ programs. ";
+        cin >> TF4;
+        if (TF4 == 'T' || TF4 == 't' || TF4 == 'F' || TF4 == 'f') {
+            if (TF4 == 'T' ||TF4 == 't') {
+                TF4++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+        while(true) {
+        cout << lineBreak << "True (T) False (F)"
+             << blankSpace << "The cout function in C++ is used for output to the console. ";
+        cin >> TF5;
+        if (TF5 == 'T' || TF5 == 't' || TF5 == 'F' || TF5 == 'f') {
+            if (TF5 == 'T' || TF5 == 't') {
+                score++;
+            }
+            break;
+            } else {
+            cout << "\n";
+            }
+        }
+
+    cout << lineBreak << blankSpace << titleTabs << "Score " << score << "/10.\n";
+    retake();
+}
+
+void TestMonolouge() {
+    displayPlaceholder();
+
+    cout << lineBreak << "\n[Press Enter to continue to Test]";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear any leftover input
+    cin.get();
+    Test();
+}
+
+void Whichlesson() {
+    int WhichlessonChoice;
+    cout << lineBreak << blankSpace << "!! WARNING !! if you choosoe \"Variables\" it will continue to DataTypes and User Input"
+         << "Which Lesson would you like to start with?\n"
+         << "1. Variables.\n2. Data Types.\n3. User Input" << blankSpace << "Enter Choice: ";
+
+    while (!(cin >> WhichlessonChoice)) {
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cout << "Invalid input. Please enter a number.\nEnter Choice: ";
+    }
+    switch (WhichlessonChoice) {
+        case 1:
+            Variables(); break;
+        case 2:
+            DataTypes(); break;
+        case 3:
+            UserInput(); break;
+        default:
+            cout << "Please enter among these 3 choices.\n";
+            Whichlesson();
+            break;
+    }
+}
+
+void ReviewLessons() {
+    cout << lineBreak << blankSpace << titleTabs << "!! Warning, A test is coming !!\n";
+    char ReviewLessonsChoice;
+    while (true) {
+        cout << blankSpace << "(Y)Review Lessons? (N)Continue to Test? ";
+        cin >> ReviewLessonsChoice;
+        if (ReviewLessonsChoice == 'Y' || ReviewLessonsChoice == 'y') {
+            Whichlesson();
+            break;
+        } else if (ReviewLessonsChoice == 'N' || ReviewLessonsChoice == 'n') {
+            Test();
+            break;
+        } else {
+            cout << "Please input Y or N only.\n";
+        }
+    }
 }
 
 void UserInputQuiz() {
@@ -47,7 +268,7 @@ void UserInputQuiz() {
          << "\tcout << \"Your age is: \" << age << endl;\n\treturn 0;\n}" << blankSpace;
 
     while(true) {
-        cout << "\nEnter the data type: ";
+        cout << lineBreak << "\nEnter the data type: ";
         cin >> dataType;
         if (dataType == "int") {
             cout << "\n[int age;  //Declare an integer variable]\n[You're right! You entered the data type \'int\'.]" << blankSpace;
@@ -58,7 +279,7 @@ void UserInputQuiz() {
         }
     }
 
-    cout << "[cin ___ ___;  //(Accept user input)]";
+    cout << lineBreak << "[cin ___ ___;  //(Accept user input)]";
     while(true) {
         cout << "\nWhat comes after cin: ";
         cin >> Cin1;
@@ -71,7 +292,7 @@ void UserInputQuiz() {
         }
     }
 
-    cout << "\n[cin >> ___;  //(Accept user input)";
+    cout << lineBreak << "\n[cin >> ___;  //(Accept user input)";
     while(true) {
         cout << "\nWhat comes after >>: ";
         cin >> Cin2;
@@ -118,10 +339,79 @@ void UserInput() {
 }
 
 void DataTypesQuiz() {
+    cout << lineBreak << blankSpace << titleTabs << "--Surprise Quiz!--" << blankSpace;
+    string int1, float2, char3, string4, bool5;
+    int score = 0;
+
+    cout << "Add correct data type for the following variables:" << blankSpace
+         << "1.___ myNum = 15;\n"
+         << "2.___ myFloat = 15.05;\n"
+         << "3.___ myChar = 'a';\n"
+         << "4.___ mySting = \"Hello Love\";\n"
+         << "5.___ myBool = true;\n" << blankSpace;
+
+    while(true) {
+        cout << lineBreak << "\n1: ";
+        cin >> int1;
+        if (int1 == "int") {
+            cout << "\n['int' myNum = 15;] [You've got it! \"myNum\" is the correct data. Way to go!]" << blankSpace;
+            score++;
+            break;
+        } else {
+            cout << "[Incorrect. Hint: Data Type of a WHOLE Number.]" << blankSpace;
+        }
+    }
+
+    while(true) {
+        cout << lineBreak << "\n2: ";
+        cin >> float2;
+        if (float2 == "float") {
+            cout << "\n['float' myFloat = 15.05;]\n[You correctly identified \"myFloat\". Keep shining withf those sharp coding skills!]" << blankSpace;
+            score++;
+            break;
+        } else {
+            cout << "[Incorrect. Hint: Data Type of a Real Number with DECIMAL points.]" << blankSpace;
+        }
+    }
+
+        while(true) {
+        cout << lineBreak << "\n3: ";
+        cin >> char3;
+        if (char3 == "char") {
+            cout << "\n['char' myChar = 'a';]\n[You nailed it! \"myChar\" is the data we were looking for. Great work!.]" << blankSpace;
+            score++;
+            break;
+        } else {
+            cout << "[Incorrect. Hint: This Data Type is used to store SINGLE characters.]" << blankSpace;
+        }
+    }
 
 
+        while(true) {
+        cout << lineBreak << "\n4: ";
+        cin >> string4;
+        if (string4 == "string") {
+            cout << "\n['string' myString = \"Hello Love\";]\n[Fantastic work! You've correctly pinpointed \"myString\". Keep rocking it!]" << blankSpace;
+            score++;
+            break;
+        } else {
+            cout << "[Incorrect. Hint: Data Type contains a SEQUENCES of characters.]" << blankSpace;
+        }
+    }
 
-    cout << "\n[Press Enter to continue to User Input Lesson]\n";
+    while(true) {
+        cout << lineBreak << "\n5: ";
+        cin >> bool5;
+        if (bool5 == "bool") {
+            cout << "\n['bool' myBool = true;]\n[That's right! You've aced it" << score << "/4. Brilliant work!]" << blankSpace;
+            score++;
+            break;
+        } else {
+            cout << "[Incorrect. Hint: Data Type that represents LOGICAL VALUES.]" << blankSpace;
+        }
+    }
+
+    cout << lineBreak << "\n[Press Enter to continue to User Input Lesson]";
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear any leftover input
     cin.get();
     UserInput();
@@ -138,13 +428,16 @@ void DataTypes() {
          << "\tExample syntax: [int variableName = 42;] and [float floatNumber = 3.14;]\n" << lineBreak;
     Wait(1);
     cout << blankSpace << "- Booleans: The bool type represents logical values (true or false.)\n"
-         << "\tExample syntax: [bool isTrue = true;]" << lineBreak;
+         << "\tExample syntax: [bool isTrue = true;]\n" << lineBreak;
     Wait(1);
     cout << blankSpace << "- Characters: The char type is used to store single characters like 'A' or '@'.\n"
          << "\tExample syntax: [char letter = 'A';]\n" << lineBreak;
+    Wait(1);
     cout << blankSpace << "- Strings: These represent sequences of characters and are often used for words or sentences."
          << "\nExample syntax:\n\t[#include <string>\n"
-         << "\t\tstd::string greeting = \"Hello, World!\"];" << blankSpace;
+         << "\t\tstd::string greeting = \"Hello, World!\"];\n" << lineBreak;
+    cout << blankSpace << "- Invalid way to use: [int Name = 25;]  >>This will result an error"
+         << "\n- Valid way to use: char myChar = 'A'  >>This won't result any errors.\n" << lineBreak << blankSpace;
     Wait(2);
     pause();
     DataTypesQuiz();
@@ -170,7 +463,7 @@ void VariablesQuiz() {
         }
     }
 
-    cout << lineBreak << "[Create in integer named myNum and assign the value 15 to it.]\n[___ ___ age = ___;]\n";
+    cout << lineBreak << "\n[Create in integer named myNum and assign the value 15 to it.]\n[___ ___ age = ___;]\n";
     while(true) {
         cout << "\nEnter the data type: ";
         cin >> dataType;
@@ -184,7 +477,7 @@ void VariablesQuiz() {
     }
 
     while(true) {
-        cout << "\nEnter the variable name: ";
+        cout << lineBreak << "\nEnter the variable name: ";
         cin >> variableName;
         if (variableName == "myNum") {
             cout << "\n[int myNum age = ___];\n[Correct! You identified the data myNum.]" << blankSpace;
@@ -196,7 +489,7 @@ void VariablesQuiz() {
     }
 
     while(true) {
-        cout << "\nEnter the value: ";
+        cout << lineBreak << "\nEnter the value: ";
         cin >> value;
         if (value == 15) {
             cout << "int myNum age = 15;\n[Congratulations! Now you can declare a variable by scratch.]" << blankSpace;
@@ -208,7 +501,7 @@ void VariablesQuiz() {
         }
     }
 
-    cout << "\n[Press Enter to continue to Data Types Lesson]\n";
+    cout << "\n[Press Enter to continue to Data Types Lesson]";
     cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear any leftover input
     cin.get();
     DataTypes();
@@ -256,9 +549,9 @@ void gameIntro() {
     cout << "C++ uses statements to perform actions. These include declaration statements (e.g., int x = 5;),\n";
     cout << "control statements (e.g., if, for, while), and more. Statements are the building blocks of a C++ program." << blankSpace;
 
-    cout << "[Press Enter to continue to Variable Lesson]\n";
-    cin.ignore();
-    getchar();
+    cout << "[Press Enter to continue to Variable Lesson]";
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Clear any leftover input
+    cin.get();
     Variables();
 }
 
@@ -299,7 +592,7 @@ void Credits() {
          << string(2, '\t') << "Q.A. Tester      | Aniceto, Ezekiel Leinard B." << blankSpace;
     this_thread::sleep_for(seconds(1));
     displayPlaceholder();
-    cout << lineBreak << blankSpace;
+    cout << "\nShoutout kay lee pogi sa pag tapos ng Protoype!!\n" << lineBreak << blankSpace;
     MainMenu();
 }
 
