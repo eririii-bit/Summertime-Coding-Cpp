@@ -7,12 +7,14 @@
 - Quiz Functions.
 - Interaction with the player.
 - Added Functions and Constants to avoid line of code iterations.
+- The Test.
 
 ### **Fixed?**
 - Fixed press enter to continue text. 
-- Some errors (logic-error).
+- More errors (logic-error).
 
 **Features yet to come:**
-- The Test.
+
 - Removal of all placeholders.
 - More QoL changes (Joking).
+- Save/Load Functions
