@@ -10,11 +10,11 @@
 - The Test.
 
 ### **Fixed?**
-- Fixed press enter to continue text. 
-- More errors (logic-error).
+- Fixed press enter to continue text.
+- More errors (logic-error, Found errors).
 
 **Features yet to come:**
 
-- Removal of all placeholders.
-- More QoL changes (Joking).
-- Save/Load Functions
+- Removal of all placeholders (🐐).
+- A pinch of QoL changes (Not Joking Anymore).
+- Save/Load Functions (Hopefully).
